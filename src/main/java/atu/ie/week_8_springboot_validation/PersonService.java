@@ -14,8 +14,6 @@ private final PersonRepo personRepo;
         personRepo.save(person);
     }
     public Person getPersonByEmployeeId(String employeeId){
-        //fetch data from a database in future lab
-        //For simplicity we return a dummy person
-        return new Person();
+        return personRepo.findByEmployeeId(employeeId);
     }
 }
