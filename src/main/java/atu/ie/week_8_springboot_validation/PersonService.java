@@ -4,8 +4,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PersonService {
+private final PersonRepo personRepo;
+
+    public PersonService(PersonRepo personRepo) {
+        this.personRepo = personRepo;
+    }
+
     public void savePerson(Person person){
-        System.out.println("Person saved: " + person);
+        personRepo.save(person);
     }
     public Person getPersonByEmployeeId(String employeeId){
         //fetch data from a database in future lab
